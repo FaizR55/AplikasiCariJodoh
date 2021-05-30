@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native'
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import axios from 'axios';
@@ -33,11 +33,12 @@ export class DataCalon extends Component {
             <View style={styles.viewStyle}>
 
             <Text style={styles.title}> Data Calon </Text>
-
+           
                 <FlatList
                     data={this.state.dataFlatList}
                     keyExtractor={item=>parseInt(item.id)}
                     renderItem={({item})=>(
+                <TouchableOpacity onPress={() => { this.props.navigation.navigate('DetailCalon'), item }}>
                         <View style={{borderWidth:10,borderColor:"green",flexDirection:"row",margin:5}}>
                             <Image style={{width:120,height:120}}
                                 source={{uri:`http://192.168.43.90:8080/user/image/${item.image}`}}
@@ -48,8 +49,10 @@ export class DataCalon extends Component {
                                 <Text style={styles.flattext}>Username : {item.username}</Text>
                             </View>
                         </View>
+                </TouchableOpacity>
                     )}
                 />
+                
             </View>
         )
     }

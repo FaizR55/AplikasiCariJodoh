@@ -8,6 +8,7 @@ import Login from '../page/Login';
 import MainMenu  from '../page/MainMenu';
 import DataCalon from '../page/DataCalon';
 import PilihCalon from '../page/PilihCalon';
+import DetailCalon from '../page/DetailCalon';
 import MapPage from '../page/MapPage';
 
 const Stack = createStackNavigator();
@@ -21,6 +22,7 @@ export class Router extends Component {
                 <Stack.Screen name="MainMenu" component={MainMenu}/>
                 <Stack.Screen name="DataCalon" component={DataCalon}/>
                 <Stack.Screen name="PilihCalon" component={PilihCalon}/>
+                <Stack.Screen name="DetailCalon" component={DetailCalon}/>
                 <Stack.Screen name="MapPage" component={MapPage}/>
             </Stack.Navigator>
         )
